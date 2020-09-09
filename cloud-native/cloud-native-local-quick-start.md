@@ -13,7 +13,7 @@
 - 8G以上内存
 - [Vagrant 2.0+](https://www.vagrantup.com/)
 - [VirtualBox 5.0 +](https://www.virtualbox.org/wiki/Downloads)
-- 提前下载kubernetes1.9.1以上版本的release压缩包，[至百度网盘下载](https://pan.baidu.com/s/1zkg2xEAedvZHObmTHDFChg)
+- 提前下载kubernetes1.9.1以上版本的release压缩包，[至百度网盘下载](https://pan.baidu.com/s/1zkg2xEAedvZHObmTHDFChg)（并将名字中的版本号删除）
 - Mac/Linux，**不支持Windows**
 - 支持Kubernetes1.9以上版本（支持当前Kubernetes最新版本1.11.1）
 
@@ -60,7 +60,7 @@ cd kubernetes-vagrant-centos-cluster
 vagrant up
 ```
 
-**注意**：克隆完Git仓库后，需要提前下载kubernetes的压缩包到`kubenetes-vagrant-centos-cluster`目录下，包括如下两个文件：
+**注意**：克隆完Git仓库后，需要提前下载kubernetes的压缩包到`kubenetes-vagrant-centos-cluster`目录下，**并将压缩包名字中的版本号删除**，包括如下两个文件：
 
 - kubernetes-client-linux-amd64.tar.gz
 - kubernetes-server-linux-amd64.tar.gz
@@ -214,8 +214,6 @@ istioctl create -f yaml/istio-bookinfo/bookinfo-gateway.yaml
 
 **注意**：`JAEGER_PORT`可以通过`kubectl -n istio-system get svc tracing -o jsonpath='{.spec.ports[0].nodePort}'`获取，`GATEWAY_PORT`可以通过`kubectl -n istio-system get svc istio-ingressgateway -o jsonpath='{.spec.ports[0].nodePort}'`获取。
 
-详细信息请参阅 https://istio.io/zh/docs/examples/bookinfo/
-
 ![bookinfo示例](https://github.com/rootsongjc/kubernetes-vagrant-centos-cluster/raw/master/images/bookinfo-demo.gif)
 
 ### Vistio
@@ -352,5 +350,4 @@ rm -rf .vagrant
 - [Kubernetes handbook - jimmysong.io](https://jimmysong.io/kubernetes-handbook)
 - [duffqiu/centos-vagrant](https://github.com/duffqiu/centos-vagrant)
 - [coredns/deployment](https://github.com/coredns/deployment)
-- [Kubernetes 1.8 kube-proxy 开启 ipvs](https://mritd.me/2017/10/10/kube-proxy-use-ipvs-on-kubernetes-1.8/#%E4%B8%80%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87)
-- [Vistio—使用Netflix的Vizceral可视化Istio service mesh](https://servicemesher.github.io/blog/vistio-visualize-your-istio-mesh-using-netflixs-vizceral/)
+- [Vistio—使用Netflix的Vizceral可视化Istio service mesh](http://www.servicemesher.com/blog/vistio-visualize-your-istio-mesh-using-netflixs-vizceral/)

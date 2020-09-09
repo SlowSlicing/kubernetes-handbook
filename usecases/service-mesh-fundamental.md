@@ -1,7 +1,5 @@
 # Service Mesh基础
 
-**注意：本书中的 Service Mesh 章节已不再维护，请转到 [istio-handbook](https://jimmysong.io/istio-handbook) 中浏览。**
-
 > 本文是对[The Enterprise Path to Service Mesh Architecutures](https://www.nginx.com/resources/library/the-enterprise-path-to-service-mesh-architectures/)一书的解读。
 
 微服务将原先的单体架构中的应用内通信，转变为基于RPC的远程通信，虽然这样提高了研发效率，提高了开发语言选择的多样性，但是随着单体应用的解体，原先的巨石散落为石块变得四处都是，如何管理这些微服务就成了难题。当微服务的个数少的时候还可以通过人工配置的方式去管理，但随着业务规模的增大，微服务的数量也可能呈指数级增长，如何协调管理成百上千的服务，这就需要有一套设计良好的框架。
@@ -79,7 +77,7 @@ Service Mesh中服务是一等公民，它提供L5的网络流量管理，并提
 
 **延迟和故障注入**
 
-这个功能对于荣宰容灾和故障演练特别有用。通过人为的向系统中注入故障，如HTTP 500错误，通过分析分布式应用的行为，检验系统的健壮性。
+这个功能对于容灾和故障演练特别有用。通过人为的向系统中注入故障，如HTTP 500错误，通过分析分布式应用的行为，检验系统的健壮性。
 
 ### 在L5解耦
 

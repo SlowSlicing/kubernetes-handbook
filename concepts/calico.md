@@ -42,12 +42,16 @@ wget  https://github.com/projectcalico/calicoctl/releases/download/v2.0.0/calico
 
 mv calicoctl /usr/loca/bin && chmod +x /usr/local/bin/calicoctl
 
+export CALICO_DATASTORE_TYPE=kubernetes
+
+export CALICO_KUBECONFIG=~/.kube/config 
+
 calicoctl get ippool
 
 calicoctl get node
 ```
 
-如果安装时启用应用层策略的话还需要安装 [istio](https://istio.io/zh)，详见 [Enabling application layer policy](https://docs.projectcalico.org/v3.4/getting-started/kubernetes/installation/app-layer-policy#about-enabling-application-layer-policy)。
+如果安装时启用应用层策略的话还需要安装 [istio](https://istio.io)，详见 [Enabling application layer policy](https://docs.projectcalico.org/v3.4/getting-started/kubernetes/installation/app-layer-policy#about-enabling-application-layer-policy)。
 
 ## 参考
 
